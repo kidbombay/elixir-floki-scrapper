@@ -11,14 +11,13 @@ defmodule JobScrapperTest do
     {_, _, [company]} = List.first(info_childrens)
     {_, _, [location]} = List.last(info_childrens)
 
-    resp = JobScrapper.zaali_detail
+    resp = JobScrapper.indeed_detail
     assert resp.company == company
     assert resp.location == location
   end
 
-  test "check JobScrapper.zaali_detail with static values" do
-    resp = JobScrapper.zaali_detail
-    IO.inspect resp
+  test "check JobScrapper.indeed_detail with static values" do
+    resp = JobScrapper.indeed_detail
     assert resp.company == "EPC Consultants, Inc."
     assert resp.location == "San Francisco, CA 94104"
   end
